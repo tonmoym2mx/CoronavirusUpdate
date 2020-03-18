@@ -1,4 +1,4 @@
-package com.covid19v2mx.coronavirus.ui.home;
+package com.covid19v2mx.coronavirus.ui.global;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -8,29 +8,29 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.databinding.DataBindingUtil;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
-import androidx.lifecycle.ViewModelProviders;
 
 import com.covid19v2mx.coronavirus.R;
+import com.covid19v2mx.coronavirus.databinding.FragmentGlobalBinding;
 
 public class GlobalFragment extends Fragment {
 
-    private GlobalViewModel homeViewModel;
+    private GlobalViewModel globalViewModel;
+    private FragmentGlobalBinding binding;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        homeViewModel =
+        globalViewModel =
                 new ViewModelProvider(getActivity()).get(GlobalViewModel.class);
-        View root = inflater.inflate(R.layout.fragment_home, container, false);
-        final TextView textView = root.findViewById(R.id.text_home);
-        homeViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
-            @Override
-            public void onChanged(@Nullable String s) {
-                textView.setText(s);
-            }
-        });
-        return root;
+        binding = DataBindingUtil.inflate(getLayoutInflater(),R.layout.fragment_global,container,false);
+        return binding.getRoot();
+    }
+
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
     }
 }

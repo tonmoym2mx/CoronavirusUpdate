@@ -7,9 +7,9 @@
 
     <fragment
         android:id="@+id/global_info"
-        android:name="com.covid19v2mx.coronavirus.ui.home.GlobalFragment"
+        android:name="com.covid19v2mx.coronavirus.ui.global.GlobalFragment"
         android:label="Covid-19 Global Information"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_global" />
 
     <fragment
         android:id="@+id/navigation_dashboard"

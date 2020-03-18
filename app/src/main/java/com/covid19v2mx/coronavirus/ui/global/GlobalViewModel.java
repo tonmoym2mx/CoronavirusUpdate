@@ -1,4 +1,4 @@
-package com.covid19v2mx.coronavirus.ui.home;
+package com.covid19v2mx.coronavirus.ui.global;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
