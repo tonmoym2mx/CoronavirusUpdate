@@ -32,33 +32,10 @@ public class MainActivity extends AppCompatActivity {
                 R.id.global_info, R.id.navigation_dashboard, R.id.navigation_notifications)
                 .build();
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
-        NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
+//        NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
         NavigationUI.setupWithNavController(navView, navController);
 
-        ApiOverallReport apiOverallReport = new ApiOverallReport(MainActivity.this) {
-            @Override
-            public void onComplete(OverallReport overallReport) {
-                Log.i(TAG, "onComplete: "+ overallReport.toString());
-            }
 
-            @Override
-            public void onFailure(String msg) {
-                Log.i(TAG, "onFailure: "+ msg);
-            }
-        };
-        apiOverallReport.startwork();
-        ApiCountrysReport apiCountrysReport = new ApiCountrysReport(MainActivity.this) {
-            @Override
-            public void onComplete(List<CountrysReport> countrysReportList) {
-                Log.i(TAG, "onComplete: "+ countrysReportList.toString());
-            }
-
-            @Override
-            public void onFailure(String msg) {
-                Log.i(TAG, "onFailure: "+ msg);
-            }
-        };
-        apiCountrysReport.startwork();
 
     }
 

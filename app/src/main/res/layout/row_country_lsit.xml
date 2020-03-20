@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout   xmlns:tools="http://schemas.android.com/tools" >
+    <data>
+        <variable
+            name="Report"
+            type="com.covid19v2mx.coronavirus.model.CountrysReport" />
+    </data>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+
+    android:background="@color/cardblack"
+    android:orientation="vertical">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@{Report.country + ``}"
+        tools:text="Bangladesh"
+        android:textColor="@color/white"
+        android:textSize="20dp"
+        android:paddingStart="10dp"
+        android:paddingTop="10dp"
+        android:paddingBottom="4dp"
+        android:paddingEnd="10dp"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/selectbackground"
+        android:text="@{ `Cases: `+Report.cases +` | Today: `+ Report.todayCases+` | Active: `+ Report.active}"
+        tools:text="Cases:4234 | Today: 45 | Active: 534435"
+        android:textSize="18dp"
+        android:paddingStart="10dp"
+        android:paddingEnd="10dp"
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/green"
+        android:text="@{`Recovered: `+Report.recovered+` | Critical: `+Report.critical}"
+        tools:text="Recovered:4234 | Today: 45 Active: 534435"
+
+        android:textSize="18dp"
+        android:paddingStart="10dp"
+        android:paddingEnd="10dp"
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/briterad"
+        android:text="@{`Deaths: `+Report.deaths+` | Today Deaths: `+Report.todayDeaths}"
+        tools:text="Deaths:4234 | Today: 45 Active: 534435"
+        android:textSize="18dp"
+        android:paddingStart="10dp"
+        android:paddingEnd="10dp"
+        />
+
+    <View
+        android:layout_marginTop="10dp"
+        android:id="@+id/divider3"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#364049" />
+
+</LinearLayout>
+</layout>

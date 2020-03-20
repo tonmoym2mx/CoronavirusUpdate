@@ -1,6 +1,7 @@
 
 package com.covid19v2mx.coronavirus.model;
 
+import com.google.android.gms.maps.model.LatLng;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
@@ -32,6 +33,7 @@ public class CountrysReport implements Serializable {
     @SerializedName("critical")
     @Expose
     private int critical;
+    private LatLng latLng;
 
     public String getCountry() {
         return country;
@@ -97,6 +99,14 @@ public class CountrysReport implements Serializable {
         this.critical = critical;
     }
 
+    public LatLng getLatLng() {
+        return latLng;
+    }
+
+    public void setLatLng(LatLng latLng) {
+        this.latLng = latLng;
+    }
+
     @Override
     public String toString() {
         return "CountrysReport{" +
@@ -108,6 +118,7 @@ public class CountrysReport implements Serializable {
                 ", recovered=" + recovered +
                 ", active=" + active +
                 ", critical=" + critical +
+                ", latLng=" + latLng +
                 '}';
     }
 }
