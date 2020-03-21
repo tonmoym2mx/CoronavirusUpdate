@@ -47,7 +47,7 @@ class GlobalFragment : Fragment() {
             }
 
             override fun onFailure(msg: String) {
-                Toast.makeText(context, msg, Toast.LENGTH_SHORT).show();
+                Toast.makeText(context, "Try Again", Toast.LENGTH_SHORT).show();
                 binding.progressBar.visibility = View.GONE
             }
         }
@@ -77,8 +77,16 @@ class GlobalFragment : Fragment() {
             centerText = "Total Cases\n${data.cases}"
         }
 
-        context?.getColor(R.color.green)?.let {
-            dataset.setColors(it, context?.getColor(R.color.red)!!) }
+        if (android.os.Build.VERSION.SDK_INT > 21) {
+            context?.getColor(R.color.green)?.let {
+                dataset.setColors(it, context?.getColor(R.color.red)!!)
+            }
+        }else{
+            context?.resources?.getColor(R.color.green)?.let {
+                dataset.setColors(it, context?.resources?.getColor(R.color.red)!!)
+            }
+        }
+
 
         binding.pieChart.animateXY(1000, 1000)
     }

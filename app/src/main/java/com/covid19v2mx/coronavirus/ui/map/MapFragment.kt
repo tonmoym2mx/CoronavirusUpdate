@@ -91,7 +91,9 @@ class MapFragment : Fragment(),OnMapReadyCallback {
 
                     }
                 }
-                googleMap?.setInfoWindowAdapter(InfoAdapterCustom(layoutInflater))
+                try {
+                    googleMap?.setInfoWindowAdapter(InfoAdapterCustom(layoutInflater))
+                }catch (e:IllegalStateException){}
 
             }
 

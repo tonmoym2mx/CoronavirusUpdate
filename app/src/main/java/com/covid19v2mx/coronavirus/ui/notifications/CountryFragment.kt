@@ -81,7 +81,7 @@ class CountryFragment : Fragment() {
             }
 
             override fun onFailure(msg: String) {
-                Toast.makeText(activity, msg, Toast.LENGTH_SHORT).show();
+                Toast.makeText(context, "Try Again", Toast.LENGTH_SHORT).show();
             }
         }
         apiCountrysReport.startwork()
